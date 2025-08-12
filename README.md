@@ -1,10 +1,10 @@
-## Detect Unauthorized CronJobs
+## Detect-Unauthorized-CronJobs.sh
 
 This script scans for suspicious cron jobs and systemd timers that reference non-standard paths, providing a JSON-formatted output for integration with security tools like OSSEC/Wazuh.
 
 ### Overview
 
-The `Detect-Unauthorized-CronJobs` script identifies potential unauthorized or suspicious cron jobs and systemd timers by analyzing their configurations for references to non-standard directories. It outputs results in a standardized JSON format suitable for active response workflows.
+The `Detect-Unauthorized-CronJobs.sh` script identifies potential unauthorized or suspicious cron jobs and systemd timers by analyzing their configurations for references to non-standard directories. It outputs results in a standardized JSON format suitable for active response workflows.
 
 ### Script Details
 
@@ -18,7 +18,7 @@ The `Detect-Unauthorized-CronJobs` script identifies potential unauthorized or s
 
 #### Command Line Execution
 ```bash
-./Detect-Unauthorized-CronJobs
+./Detect-Unauthorized-CronJobs.sh
 ```
 
 #### Parameters
@@ -31,7 +31,7 @@ The `Detect-Unauthorized-CronJobs` script identifies potential unauthorized or s
 
 ```bash
 # Run the script
-./Detect-Unauthorized-CronJobs
+./Detect-Unauthorized-CronJobs.sh
 ```
 
 ### Script Execution Flow
@@ -63,7 +63,7 @@ The `Detect-Unauthorized-CronJobs` script identifies potential unauthorized or s
 {
   "timestamp": "2025-07-18T10:30:45.123Z",
   "host": "HOSTNAME",
-  "action": "Detect-Unauthorized-CronJobs",
+  "action": "Detect-Unauthorized-CronJobs.sh",
   "data": [
     {
       "type": "cron",
@@ -86,7 +86,7 @@ If no suspicious entries are found:
 {
   "timestamp": "2025-07-18T10:30:45.123Z",
   "host": "HOSTNAME",
-  "action": "Detect-Unauthorized-CronJobs",
+  "action": "Detect-Unauthorized-CronJobs.sh",
   "data": [],
   "copilot_soar": true
 }
@@ -114,7 +114,7 @@ If no suspicious entries are found:
 #### Debugging
 Enable verbose logging by reviewing the script's log output:
 ```bash
-./Detect-Unauthorized-CronJobs
+./Detect-Unauthorized-CronJobs.sh
 ```
 
 ### Contributing
