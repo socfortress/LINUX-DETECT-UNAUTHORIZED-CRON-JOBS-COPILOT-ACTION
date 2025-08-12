@@ -1,6 +1,6 @@
 ## Detect-Unauthorized-CronJobs.sh
 
-This script scans for suspicious cron jobs and systemd timers that reference non-standard paths, providing a JSON-formatted output for integration with security tools like OSSEC/Wazuh.
+This script scans for suspicious cron jobs and systemd timers that reference non-standard paths, providing a JSON-formatted output for integration with your SIEM.
 
 ### Overview
 
