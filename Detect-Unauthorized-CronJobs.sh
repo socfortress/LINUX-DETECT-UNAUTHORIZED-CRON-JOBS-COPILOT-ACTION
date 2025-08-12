@@ -15,7 +15,7 @@ escape_json() {
   printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'
 }
 
-> "$ARLog"
+: > "$ARLog"
 WriteLog "Active response log cleared for fresh run." INFO
 WriteLog "=== SCRIPT START : $ScriptName ===" INFO
 
@@ -42,9 +42,7 @@ WriteLog "Scanning systemd timers..." INFO
 timers=$(systemctl list-timers --all --no-pager --no-legend 2>/dev/null | awk '{print $3}' | grep '\.timer$' || true)
 for timer in $timers; do
   service="${timer%.timer}.service"
-  service_path=$(systemctl show -p FragmentPath "$service" 2>/dev/null | cut -d= -f2 || true)
   exec_start=$(systemctl show -p ExecStart "$service" 2>/dev/null | cut -d= -f2- || true)
-  
   for dir in $SUSP_DIRS; do
     if echo "$exec_start" | grep -q "$dir"; then
       escaped_service=$(escape_json "$service")
@@ -55,7 +53,7 @@ for timer in $timers; do
   done
 done
 
-suspicious_json="${suspicious_json#,}" 
+suspicious_json="${suspicious_json#,}"
 [ -n "$suspicious_json" ] && suspicious_json="[$suspicious_json]" || suspicious_json="[]"
 
 ts=$(date --iso-8601=seconds)
