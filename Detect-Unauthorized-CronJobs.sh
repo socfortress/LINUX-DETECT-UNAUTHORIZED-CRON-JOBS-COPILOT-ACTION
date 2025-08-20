@@ -57,7 +57,7 @@ suspicious_json="${suspicious_json#,}"
 [ -n "$suspicious_json" ] && suspicious_json="[$suspicious_json]" || suspicious_json="[]"
 
 ts=$(date --iso-8601=seconds)
-final_json="{\"timestamp\":\"$ts\",\"host\":\"$HostName\",\"action\":\"$ScriptName\",\"data\":$suspicious_json,\"copilot_soar\":true}"
+final_json="{\"timestamp\":\"$ts\",\"host\":\"$HostName\",\"action\":\"$ScriptName\",\"data\":$suspicious_json,\"copilot_action\":true}"
 
 tmpfile=$(mktemp)
 printf '%s\n' "$final_json" > "$tmpfile"
