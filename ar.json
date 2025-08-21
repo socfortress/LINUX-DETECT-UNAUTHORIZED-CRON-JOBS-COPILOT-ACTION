@@ -1,0 +1,19 @@
+{
+  "active_response_name": "LINUX-DETECT-UNAUTHORIZED-CRON-JOBS-ACTIVERESPONSE",
+  "description": "LINUX-DETECT-UNAUTHORIZED-CRON-JOBS-ACTIVERESPONSE.",
+  "technology": "Linux",
+  "icon": "Linux",
+  "script_parameters": [
+    {
+      "name": "RunID",
+      "type": "string",
+      "required": false,
+      "description": "Unique run identifier for log correlation",
+      "default": null
+    }
+  ],
+  "repo_url": "https://github.com/socfortress/LINUX-DETECT-UNAUTHORIZED-CRON-JOBS-ACTIVERESPONSE",
+  "script_name": "List-Running-Apps.ps1",
+  "version": "1.0.0",
+  "last_updated": "2025-08-20T00:00:00Z"
+}
