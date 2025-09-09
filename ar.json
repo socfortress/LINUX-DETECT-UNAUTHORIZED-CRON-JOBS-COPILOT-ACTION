@@ -3,30 +3,7 @@
   "description": "Scans all user and system cron jobs as well as systemd timers for potential malicious or unauthorized entries pointing to suspicious paths (e.g., /tmp, /dev/shm, /home). Any matches are flagged and returned in NDJSON format, including full details of the suspicious entries. Results are written atomically to the Active Response log with .new fallback if locked.",
   "technology": "Linux",
   "icon": "linux",
-  "script_parameters": [
-    {
-      "name": "LogPath",
-      "type": "string",
-      "required": false,
-      "description": "Path to the rotating human-readable script log (stderr by default).",
-      "default": "/tmp/Detect-Unauthorized-CronJobs.log"
-    },
-    {
-      "name": "ARLog",
-      "type": "string",
-      "required": false,
-      "description": "Active Response NDJSON output path (atomic overwrite; falls back to .new if locked).",
-      "default": "/var/ossec/active-response/active-responses.log"
-    },
-    {
-      "name": "SuspiciousDirs",
-      "type": "string",
-      "required": false,
-      "description": "Space-separated list of directories considered suspicious for cron or systemd timer execution.",
-      "default": "/tmp /dev/shm /home"
-    }
-  ],
-  "repo_url": "https://raw.githubusercontent.com/socfortress/LINUX-DETECT-UNAUTHORIZED-CRON-JOBS-COPILOT-ACTION/refs/heads/main/",
+  "repo_url": "https://raw.githubusercontent.com/socfortress/LINUX-DETECT-UNAUTHORIZED-CRON-JOBS-COPILOT-ACTION/refs/heads/main/Detect-Unauthorized-CronJobs.sh",
   "script_name": "Detect-Unauthorized-CronJobs.sh",
   "version": "1.0.0",
   "last_updated": "2025-08-22T00:00:00Z"
